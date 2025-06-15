@@ -8,7 +8,7 @@ GEMINI_ENDPOINT = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
     "gemini-2.0-flash-lite:generateContent"
 )
-API_KEY = ""     # DOIT contenir ta clé
+API_KEY = "AIzaSyBYVokT7VzYVzsKJgyvJpTFaNB75p_ILzY"     # DOIT contenir ta clé
 
 def gemini_call(prompt: str, max_tries: int = 8) -> str:
     """
