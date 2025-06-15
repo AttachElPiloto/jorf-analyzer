@@ -12,6 +12,7 @@ from xml.etree import ElementTree as ET
 import httpx
 from bs4 import BeautifulSoup
 import torch
+import sys
 
 from transformer import classify_notes
 
@@ -44,9 +45,9 @@ def parse_article(xml_bytes: bytes):
     return cid, titre, corps
 
 # -------- téléchargement archive --------------------------------------
-def latest_archive_bytes():
+def latest_archive_bytes(arg : int):
     soup = BeautifulSoup(httpx.get(INDEX_URL, timeout=30).text, "html.parser")
-    link = [a["href"] for a in soup.find_all("a", href=lambda h: h and h.endswith(".tar.gz"))][-1]
+    link = [a["href"] for a in soup.find_all("a", href=lambda h: h and h.endswith(".tar.gz"))][-arg]
     url  = INDEX_URL + link
     print("⬇️  Téléchargement :", url)
     return httpx.get(url, timeout=120).content
@@ -58,11 +59,14 @@ def iter_article_xml(bin_archive: bytes):
                 yield tar.extractfile(m).read()
 
 
-def main():
-    xml_iter = iter_article_xml(latest_archive_bytes())
+def main(arg : int):
+    xml_iter = iter_article_xml(latest_archive_bytes(arg))
     arts = [parse_article(x) for x in xml_iter]
     print("✅", len(arts), "articles XML extraits.")
 
+    # clean old files
+    pathlib.Path("articles_proteges.txt").unlink(missing_ok=True)
+    pathlib.Path("articles_pertinents.txt").unlink(missing_ok=True)
     titres_pertinents: set[str] = set()     # ← NEW
     out = []
 
@@ -95,4 +99,10 @@ def main():
     print(f"\n✅ {len(out)} articles pertinents trouvés.")
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1:
+        arg =int(sys.argv[1]) if len(sys.argv) > 1 else 1
+	
+        print(arg)
+        main(arg)
+    else:
+        main()

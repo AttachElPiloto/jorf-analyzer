@@ -8,7 +8,7 @@ GEMINI_ENDPOINT = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
     "gemini-2.0-flash-lite:generateContent"
 )
-API_KEY = "AIzaSyBYVokT7VzYVzsKJgyvJpTFaNB75p_ILzY"     # DOIT contenir ta clé
+API_KEY = "AIzaSyAHLPg-Mo1Cwxo782LKVLrgIJYyyM-Yk10"     # DOIT contenir ta clé
 
 def gemini_call(prompt: str, max_tries: int = 8) -> str:
     """
@@ -60,41 +60,38 @@ Analyse le texte utilisateur et réponds UNIQUEMENT par un objet JSON :
   "score":  <0-100>               # % d’importance (0 = sans intérêt, 100 = crucial)
 }
 
-• La liste DOIT être vide si aucune note n’est concernée par l'article.
-• “score” est ta mesure globale de pertinence et de degrè d'importance pour les notes retenues.
+• La liste DOIT être vide si aucune note n’est concernée par l'article.  
+• “score” est ta mesure globale de pertinence et de degré d'importance pour les notes retenues ; il doit être élevé si l'article a un impact en comptabilité générale de l'État.
 
 ──────────────────────────  Rappels détaillés  ──────────────────────────
-Note 8 – Immobilisations financières
-  • immobilisations financières, participations publiques, actifs financiers de l’État,
-    créances rattachées, prêts et avances de l’État, fonds sans personnalité juridique,
-    dotations en capital, France 2030, investissements d’avenir, participations de l’État,
-    État actionnaire, contrôle public des entreprises, comptes consolidés,
-    valeur d’équivalence, sociétés publiques,
-    organismes de droit privé à financement public,
+Note 8 – Immobilisations financières  
+  • Participations, créances rattachées à des participations, prêts et avances, fonds sans personnalité juridique, contrats de désendettement et de développement  
+    immobilisations financières, participations publiques, actifs financiers de l’État,  
+    créances rattachées,  
+    dotations en capital, France 2030, investissements d’avenir, participations de l’État,  
+    État actionnaire, comptes consolidés,  
+    valeur d’équivalence,  
     participation financière publique, établissement public.
 
-Note 11 – Dettes financières
-  • dettes de l’État, emprunts publics, titres négociables,
-    obligations souveraines, primes et décotes, dette brute, dette nette,
+Note 11 – Dettes financières  
+  • dettes de l’État, emprunts publics, titres négociables, obligations  
+    assimilables du Trésor, OAT vertes, bons du Trésor à taux fixe,  
+    obligations souveraines, primes et décotes, contrats de partenariat public-privé, contrats de location-financement, emprunts repris de tiers pris en charge par l’État  
     dette publique, Agence France Trésor, instruments de dette.
 
-Note 14 – Autres passifs
-  • passifs divers, bons du Trésor, monnaie métallique, France 2030,
-    dotations consommables, dotations budgétaires, subventions en capital,
-    engagements à long terme.
+Note 14 – Autres passifs  
+  • passifs divers, bons du Trésor émis au profit du Fonds monétaire international, quote-part de la France au FMI, monnaie métallique, France 2030, programmes d’investissements d’avenir, dotations consommables France 2030 et investissements d’avenir, dotations budgétaires, subventions France 2030, dotations BPI, dotations Caisse des dépôts, dotations ADEME, dotations ANR.
 
-Note 15 – Trésorerie
-  • trésorerie de l’État, fonds en caisse, valeurs mobilières de placement,
-    comptes du Trésor, flux financiers journaliers, correspondants du Trésor.
+Note 15 – Trésorerie  
+  • trésorerie de l’État, fonds en caisse, compte du Trésor à la Banque de France, valeurs mobilières de placement, placements à court terme, placements sur le marché interbancaire, correspondants du Trésor.
 
-Note 16 – Comptes de régularisation
-  • comptes transitoires, charges constatées d’avance, produits constatés d’avance,
-    écritures d’inventaire, dotations non consommables,
-    investissements d’avenir – régularisations.
+Note 16 – Comptes de régularisation  
+  • écart au bilan d’ouverture, charges à répartir, dotations non consommables, comptes de dépôts de fonds au Trésor, IDEX PIA,  
+    régularisations investissements d’avenir, écart de conversion FMI.
 
-Note 20 – Charges et produits financiers
-  • charges financières, intérêts de la dette, produits financiers,
-    gains et pertes de change, amortissements financiers,
+Note 20 – Charges et produits financiers  
+  • charges financières, intérêts de la dette, produits financiers,  
+    gains et pertes de change, amortissements financiers,  
     reprises sur provisions financières, rémunération des participations.
 """
 
