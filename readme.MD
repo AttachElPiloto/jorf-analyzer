@@ -1,25 +1,27 @@
-# 📄 Analyse intelligente du Journal Officiel (JORF)
+# Analyse intelligente du Journal Officiel (JORF)
 
-Ce petit outil automatise la lecture du Journal Officiel pour repérer les articles vraiment pertinents… sans avoir à tout lire manuellement. Il utilise un LLM pour détecter ceux qui parlent de finances publiques (trésorerie, dettes, immobilisations, etc.).
+Ce petit outil automatise la lecture du Journal Officiel pour repérer les articles vraiment pertinents sans avoir à tout lire manuellement. Il utilise Gemini Flash-Lite 2.0 pour détecter ceux qui parlent de finances publiques (trésorerie, dettes, immobilisations, etc.).
 
 ---
 
-## ⚙️ Ce que fait le script
+## Pipeline
 
 1. Télécharge automatiquement la dernière archive du JORF.
 2. Extrait chaque article au format XML.
-3. Envoie les titres + extraits au modèle Gemini Flash Lite (API Google).
-4. Le modèle répond avec :
-   - Une **liste de notes** comptables concernées (8, 11, 14, 15, 16 ou 20).
-   - Un **score d’importance** (entre 0 et 100).
-5. Si l’article est jugé pertinent :
-   - On l’ajoute dans un fichier trié.
+3. Envoie les titres + extraits de chaque article du JORF concerné à Gemini.
+4. Le modèle répond avec un JSON formaté contenant : 
+   - Une liste des notes concernées, vide si aucune ne l'est
+   - Un score d'importance pour hiérarchiser les articles
+   - Un bref résumé de l'article
+   - Un indice permettant de comprendre le texte qui a trigger la détéction du LLM.
+5. Enfin, on envoie un mail contenant les articles pertinents à l'adresse souhaitée.
 
 ---
 
-## 📦 Installation
+## How-to-install
 
-Installe les dépendances nécessaires (Python ≥ 3.8 recommandé) :
+Installe les dépendances nécessaires (Python ≥ 3.8) :
 
 ```bash
-pip install httpx beautifulsoup4 torch
+pip install httpx beautifulsoup4
+

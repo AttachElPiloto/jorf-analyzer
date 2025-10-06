@@ -1,0 +1,117 @@
+
+
+--- Nouvelle exécution : 2025-09-30T20:18:46.945167 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:19:45.001597 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:20:08.191395 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:20:25.584263 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:20:58.804522 ---
+Erreur lors du traitement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250713-002503.tar.gz : 'bytes' object has no attribute 'content'
+Erreur lors du traitement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250716-004828.tar.gz : 'bytes' object has no attribute 'content'
+Erreur lors du traitement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250717-011437.tar.gz : 'bytes' object has no attribute 'content'
+Erreur lors du traitement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250718-005428.tar.gz : 'bytes' object has no attribute 'content'
+Erreur lors du traitement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250719-010242.tar.gz : 'bytes' object has no attribute 'content'
+Erreur lors du traitement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250720-002253.tar.gz : 'bytes' object has no attribute 'content'
+Erreur lors du traitement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250722-002150.tar.gz : 'bytes' object has no attribute 'content'
+
+
+--- Nouvelle exécution : 2025-09-30T20:22:54.333544 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:23:07.683283 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:23:50.556469 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:24:19.712661 ---
+Erreur lors du traitement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250713-002503.tar.gz : 'bytes' object has no attribute 'content'
+Erreur lors du traitement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250716-004828.tar.gz : 'bytes' object has no attribute 'content'
+
+
+--- Nouvelle exécution : 2025-09-30T20:24:45.980051 ---
+Erreur lors du traitement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250713-002503.tar.gz : 'bytes' object has no attribute 'content'
+Erreur lors du traitement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250716-004828.tar.gz : 'bytes' object has no attribute 'content'
+
+
+--- Nouvelle exécution : 2025-09-30T20:24:58.668704 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:26:27.721530 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:26:55.304711 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:27:47.340477 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:29:04.878186 ---
+Erreur lors du traitement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250718-005428.tar.gz : not enough values to unpack (expected 4, got 2)
+
+
+--- Nouvelle exécution : 2025-09-30T20:35:32.929345 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:38:57.352380 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:40:57.005627 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:43:18.498361 ---
+
+
+--- Nouvelle exécution : 2025-10-01T00:14:37.660118 ---
+
+
+--- Nouvelle exécution : 2025-10-01T00:15:13.112003 ---
+
+
+--- Nouvelle exécution : 2025-10-01T00:15:30.020345 ---
+
+
+--- Nouvelle exécution : 2025-10-01T00:15:55.297514 ---
+
+
+--- Nouvelle exécution : 2025-10-01T00:18:14.552445 ---
+
+
+--- Nouvelle exécution : 2025-10-02T16:16:02.831043 ---
+
+
+--- Nouvelle exécution : 2025-10-02T16:16:34.011422 ---
+
+
+--- Nouvelle exécution : 2025-10-02T16:17:10.624020 ---
+
+
+--- Nouvelle exécution : 2025-10-02T16:18:56.980815 ---
+
+
+--- Nouvelle exécution : 2025-10-02T16:30:12.588693 ---
+
+
+--- Nouvelle exécution : 2025-10-02T17:37:30.392451 ---
+
+
+--- Nouvelle exécution : 2025-10-03T11:32:02.677293 ---
+
+
+--- Nouvelle exécution : 2025-10-04T21:42:48.260523 ---
+
+
+--- Nouvelle exécution : 2025-10-06T02:14:44.933527 ---
+
+
+--- Nouvelle exécution : 2025-10-06T02:14:59.832721 ---
+
+
+--- Nouvelle exécution : 2025-10-06T18:56:04.778553 ---

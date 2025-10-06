@@ -8,9 +8,9 @@ GEMINI_ENDPOINT = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
     "gemini-2.0-flash-lite:generateContent"
 )
-API_KEY = "AIzaSyAHLPg-Mo1Cwxo782LKVLrgIJYyyM-Yk10"     # DOIT contenir ta clé
+API_KEY = "not commiting this"     # DOIT contenir ta clé
 
-def gemini_call(prompt: str, max_tries: int = 8) -> str:
+def gemini_call(prompt: str, max_tries: int = 10000000000000000) -> str:
     """
     Appelle Gemini Flash Lite et renvoie le texte brut de la réponse.
     • Gère les erreurs 429 (quota) en attendant le temps demandé.
@@ -18,7 +18,7 @@ def gemini_call(prompt: str, max_tries: int = 8) -> str:
     headers = {"Content-Type": "application/json"}
     body = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0.3, "maxOutputTokens": 256}
+        "generationConfig": {"temperature": 0.3, "maxOutputTokens": 1024}
     }
     url = f"{GEMINI_ENDPOINT}?key={API_KEY}"
 
@@ -26,25 +26,19 @@ def gemini_call(prompt: str, max_tries: int = 8) -> str:
         try:
             r = httpx.post(url, headers=headers, json=body, timeout=60)
             if r.status_code == 429:
-                # -------- quota exceeded → on attend puis on ré-essaye -------
-                retry_after = int(r.headers.get("Retry-After", "30"))/2
-                backoff     = 2 ** (attempt - 1)          # 1→1 s, 2→2 s, 3→4 s…
-                wait_sec    = retry_after + backoff
-                print(f"⚠️  429 – attente {wait_sec}s…")
-                time.sleep(wait_sec)
+                print(f"⚠️  429 – attente 15s…")
+                time.sleep(15)
                 continue
 
             r.raise_for_status()             # autres erreurs HTTP éventuelles
             return r.json()["candidates"][0]["content"]["parts"][0]["text"]
 
         except httpx.HTTPStatusError as e:
-            backoff = 2 ** (attempt - 1)
-            print(f"⚠️ HTTP {e.response.status_code} – retry dans {backoff}s")
-            time.sleep(backoff)
+            print(f"⚠️ HTTP {e.response.status_code} – retry dans {2}s")
+            time.sleep(2)
         except Exception as e:
-            backoff = 2 ** (attempt - 1)
-            print(f"⚠️ Exception {e.__class__.__name__} – retry dans {backoff}s")
-            time.sleep(backoff)
+            print(f"⚠️ Exception {e.__class__.__name__} – retry dans {2}s")
+            time.sleep(2)
 
     raise RuntimeError("Gemini API – trop d’échecs consécutifs")
 
@@ -58,10 +52,15 @@ Analyse le texte utilisateur et réponds UNIQUEMENT par un objet JSON :
 {
   "notes":  [<nombres>],          # entiers dans {8,11,14,15,16,20}
   "score":  <0-100>               # % d’importance (0 = sans intérêt, 100 = crucial)
+  "indice" : <Texte>          # lien entre l'article et les notes éventuellement détectées (1 phrase maximum, succinte)
+  "résumé": "<Texte>"          # court résumé factuel (pas d'hypothèses, seulement des affirmations) sur le fond de l'article, mentionnant les éléments clés.
+  "montant": <Texte>          # montant financier global évoqué dans l’article, ou "" s'il n'y en a pas.
 }
 
-• La liste DOIT être vide si aucune note n’est concernée par l'article.  
-• “score” est ta mesure globale de pertinence et de degré d'importance pour les notes retenues ; il doit être élevé si l'article a un impact en comptabilité générale de l'État.
+• La liste DOIT être vide si aucune note n’est concernée par l'article.
+• La liste DOIT être vide si l'article concerne la nomination d'une personne (pas pertinent).
+• “score” est ta mesure globale de pertinence et de degré d'importance pour les notes retenues ; il doit être élevé si l'article a un gros impact en comptabilité générale de l'État.
+• “montant” doit toujours être converti en millions d’euros (M€) exemple : "2 M€", "1 439 M€".
 
 ──────────────────────────  Rappels détaillés  ──────────────────────────
 Note 8 – Immobilisations financières  
@@ -100,21 +99,23 @@ def classify_notes(titre:str, texte:str):
     prompt = (
         SYSTEM_PROMPT
         + "\n───────────────────────────────────────────────\nUSER :\n"
-        + titre + "\n\n" + texte
+        + "Titre: "+ titre + "\n\n" + "Texte:"+texte
     )
     rep_raw = gemini_call(prompt)
     # print(rep_raw)  # pour debug
-    try:
-        data = json.loads(rep_raw.strip())
-    except json.JSONDecodeError:
+    for _ in range(3):  # réessaye 3 fois en cas d’erreur de parsing
         try:
-            match = re.search(r"```json\s*(\{.*?\})\s*```", rep_raw, re.DOTALL)
-            if match:
-                data = json.loads(match.group(1))
-            else:
-                raise ValueError("Aucun bloc JSON trouvé.")
-        except Exception as e:
-            print("⚠️ Impossible d’extraire le JSON :", str(e))
-            return [], 0
-
-    return data.get("notes", []), data.get("score", 0)
+            data = json.loads(rep_raw.strip())
+        except json.JSONDecodeError:
+            try:
+                match = re.search(r"```json\s*(\{.*?\})\s*```", rep_raw, re.DOTALL)
+                if match:
+                    data = json.loads(match.group(1))
+                    return data.get("notes", []), data.get("score", 0),data.get("indice", ""), data.get("résumé", ""),data.get("montant","")
+                else:
+                    raise ValueError("Aucun bloc JSON trouvé.")
+            except Exception as e:
+                print(rep_raw)
+                print("⚠️ Impossible d’extraire le JSON :", str(e))
+    return [], 0, "", "", "" 
+    

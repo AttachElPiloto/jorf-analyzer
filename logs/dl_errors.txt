@@ -1,0 +1,111 @@
+Échec du téléchargement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250719-010242.tar.gz après 3 tentatives.
+
+
+--- Nouvelle exécution : 2025-09-30T20:18:46.937233 ---
+Échec du téléchargement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250713-002503.tar.gz après 3 tentatives.
+
+
+--- Nouvelle exécution : 2025-09-30T20:19:45.000927 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:20:08.190455 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:20:25.583652 ---
+Échec du téléchargement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250713-002503.tar.gz après 3 tentatives.
+
+
+--- Nouvelle exécution : 2025-09-30T20:20:58.803689 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:22:54.332868 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:23:07.682745 ---
+Échec du téléchargement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250713-002503.tar.gz après 3 tentatives.
+Échec du téléchargement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250716-004828.tar.gz après 3 tentatives.
+
+
+--- Nouvelle exécution : 2025-09-30T20:23:50.555120 ---
+Échec du téléchargement de l'archive https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20250713-002503.tar.gz après 3 tentatives.
+
+
+--- Nouvelle exécution : 2025-09-30T20:24:19.711941 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:24:45.979355 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:24:58.667989 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:26:27.720788 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:26:55.304015 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:27:47.339170 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:29:04.877704 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:35:32.928689 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:38:57.351915 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:40:57.005163 ---
+
+
+--- Nouvelle exécution : 2025-09-30T20:43:18.497750 ---
+
+
+--- Nouvelle exécution : 2025-10-01T00:14:37.659262 ---
+
+
+--- Nouvelle exécution : 2025-10-01T00:15:13.111431 ---
+
+
+--- Nouvelle exécution : 2025-10-01T00:15:30.019570 ---
+
+
+--- Nouvelle exécution : 2025-10-01T00:15:55.297130 ---
+
+
+--- Nouvelle exécution : 2025-10-01T00:18:14.551898 ---
+
+
+--- Nouvelle exécution : 2025-10-02T16:16:02.830508 ---
+
+
+--- Nouvelle exécution : 2025-10-02T16:16:34.010583 ---
+
+
+--- Nouvelle exécution : 2025-10-02T16:17:10.623441 ---
+
+
+--- Nouvelle exécution : 2025-10-02T16:18:56.979943 ---
+
+
+--- Nouvelle exécution : 2025-10-02T16:30:12.588254 ---
+
+
+--- Nouvelle exécution : 2025-10-02T17:37:30.391433 ---
+
+
+--- Nouvelle exécution : 2025-10-03T11:32:02.676147 ---
+
+
+--- Nouvelle exécution : 2025-10-04T21:42:48.260024 ---
+
+
+--- Nouvelle exécution : 2025-10-06T02:14:44.932923 ---
+
+
+--- Nouvelle exécution : 2025-10-06T02:14:59.832264 ---
+
+
+--- Nouvelle exécution : 2025-10-06T18:56:04.777172 ---
