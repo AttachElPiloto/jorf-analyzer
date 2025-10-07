@@ -1,7 +1,14 @@
 # Analyse intelligente du Journal Officiel (JORF)
 
-Ce petit outil automatise la lecture du Journal Officiel pour repérer les articles vraiment pertinents sans avoir à tout lire manuellement. Il utilise Gemini Flash-Lite 2.0 pour détecter ceux qui parlent de finances publiques (trésorerie, dettes, immobilisations, etc.).
+Ce petit outil automatise la lecture du Journal Officiel pour repérer les articles vraiment pertinents sans avoir à tout lire manuellement. Il utilise Gemini Flash-Lite 2.0 pour détecter les articles liés à au moins l’une des notes suivantes : 
 
+- Note 8 – Immobilisations financières
+- Note 11 – Dettes financières
+- Note 14 – Autres passifs 
+- Note 15 – Trésorerie  
+- Note 16 – Comptes de régularisation
+- Note 20 – Charges et produits financiers  
+  
 ---
 
 <h1 align=center>Exemple d'analyze :</h1>
@@ -27,8 +34,7 @@ Ce petit outil automatise la lecture du Journal Officiel pour repérer les artic
 
 ## How-to-install
 
-Installe les dépendances nécessaires (Python ≥ 3.8) :
-
+Installe les dépendances nécessaires 
 ```bash
 pip install httpx beautifulsoup4
 ```
